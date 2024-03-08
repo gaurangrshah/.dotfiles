@@ -1,0 +1,117 @@
+{
+  "telemetry.telemetryLevel": "off",
+  "workbench.colorTheme": "Tokyo Night",
+  "workbench.iconTheme": "file-icons",
+  "zenMode.fullScreen": false,
+  "terminal.integrated.env.osx": {},
+  "editor.matchBrackets": "never",
+  "files.exclude": {
+    "**/.next/": true,
+    "**/node_modules": true,
+    "**/.history": true
+  },
+  "search.mode": "newEditor",
+  "search.exclude": {
+    "**/.next": true,
+    "**/node_modules": true,
+    "**/.history": true,
+    "**/coverage": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.build": true,
+    "**/.gh-pages": true,
+    "**/.cache": true,
+    "**/.git": true,
+    "**/.migrations": true,
+    "**/.vscode**": true
+  },
+  "search.searchEditor.doubleClickBehaviour": "openLocationToSide",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "emmet.includeLanguages": {
+    "markdown": "html",
+    "javascript": "javascriptreact"
+  },
+  "local-history.exclude": [
+    "**/.history/**",
+    "**/.vscode**",
+    "**/node_modules/**",
+    "**/.next**",
+    "**/.build**",
+    "**/.build**",
+    "**/typings/**",
+    "**/out/**",
+    "**/coverage",
+    "**/dist/**",
+    "**/build/**",
+    "**/.gh-pages/**",
+    "**/.cache/**",
+    "**/.git/**",
+    "**/.migrations/**"
+  ],
+  "local-history.daysLimit": 30,
+  "errorLens.enabledDiagnosticLevels": ["warning", "info", "error"],
+  "errorLens.enabled": true,
+  "cSpell.userWords": [
+    "Astro",
+    "btns",
+    "Chakra",
+    "ciel",
+    "clsx",
+    "cmyk",
+    "didn",
+    "favorited",
+    "fontsource",
+    "Gaurang",
+    "gaurangrshah",
+    "Hashnode",
+    "heroicons",
+    "ianvs",
+    "lucide",
+    "nextjs",
+    "postbuild",
+    "roadmap",
+    "Supa",
+    "supabase",
+    "superjson",
+    "Swatchr",
+    "tailwindcss",
+    "tanstack",
+    "tinycolor",
+    "trpc",
+    "upsert"
+  ],
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "yaml": false,
+    "search-result": true
+  },
+  "gitlens.ai.experimental.provider": "openai",
+  "gitlens.ai.experimental.openai.model": "gpt-4-turbo-preview",
+  "gitlens.views.commitDetails.files.layout": "list",
+  "gitlens.autolinks": [
+    {
+      "prefix": "SWT",
+      "url": ""
+    }
+  ],
+  "turboConsoleLog.delimiterInsideMessage": "|",
+  "turboConsoleLog.insertEnclosingFunction": false,
+  "console-ninja.featureSet": "Community",
+}
