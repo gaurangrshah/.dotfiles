@@ -1,10 +1,28 @@
 {
   "telemetry.telemetryLevel": "off",
-  "workbench.colorTheme": "Tokyo Night",
+  "vscode_custom_css.imports": [
+    "file:///Users/knowhow/dev/._config/vscode-font.css"
+  ],
+  "editor.renderControlCharacters": true,
+  "editor.fontSize": 13,
+  "editor.renderWhitespace": "all",
+  "editor.fontFamily": "Operator Mono Italic, Fira Code",
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 20.3,
+  "editor.letterSpacing": 0.5,
+  "editor.accessibilitySupport": "off",
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorStyle": "block",
+  "editor.tabCompletion": "on",
+  "editor.rulers": [80],
+  "editor.tabSize": 2,
+  "workbench.fontAliasing": "auto",
   "workbench.iconTheme": "file-icons",
+  "workbench.editor.labelFormat": "short",
+  "workbench.colorTheme": "Tokyo Night",
   "zenMode.fullScreen": false,
   "terminal.integrated.env.osx": {},
-  "editor.matchBrackets": "never",
+  "editor.matchBrackets": false,
   "files.exclude": {
     "**/.next/": true,
     "**/node_modules": true,
@@ -113,5 +131,5 @@
   ],
   "turboConsoleLog.delimiterInsideMessage": "|",
   "turboConsoleLog.insertEnclosingFunction": false,
-  "console-ninja.featureSet": "Community",
+  "console-ninja.featureSet": "Community"
 }
