@@ -107,42 +107,7 @@ PROMPT='%{$fg[yellow]%}[%D{%f/%m/%y} %D{%L:%M:%S}] '$PROMPT
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# reload zshrc
-alias zload='source ~/.zshrc'
-
-# copy present working directory to clipboard
-alias copypath='pwd|pbcopy'
-
-# generate random salt 28 chars
-alias salt='echo openssl rand -base64 28 | pbcopy'
-
-alias glog="git log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%an%C(reset)%C(bold yellow)%d%C(reset) %C(dim white)- %s%C(reset)' --all"
-
-alias clip2="xclip =o >" # creates a new file with clipboard content
-
-alias pn=pnpm
-alias px=pnpx
-
-alias cna='pnpm dlx create next-app@latest --tailwind --typescript --eslint --app --use-yarn'
-
-# Used for dotfiles git tracking
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
-# Framework specific aliases
-alias cna='pnpm dlx create next-app@latest --tailwind --typescript --eslint --app --use-pnpm'
-
-# alias config-next="~/.sh1/next/config.sh"
-# alias scaff-next="~/.sh1/scaffold-next.sh"
-# alias gitdl="~/.sh1/gitdl.sh"
-
-# # creates a new bash script from clipboard contents runs chmod +x and adds a zsh alias
-# alias xscript="~/.sh1/create-alias-script.sh"
-
-# # takes in 2 args $1: username/gistId  $2: filename -- must be run from parent dir
-# alias giste="~/.sh1/create-file-from-gist.sh"
-
-# alias gitsDir="/Users/gshah/.sh1/git-extract-dir.sh"
-# alias dupe="~/.sh1/dupe.sh"
+# NOTE: Aliases have been moved to .oh-my-zsh/custom/aliases.zsh
 
 ## create astro app
 function create_astro_with_tailwind() {
@@ -158,3 +123,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 PATH=~/.console-ninja/.bin:$PATH
+
+SPACESHIP_PROMPT_ASYNC=FALSE

@@ -1,66 +1,76 @@
 #!/bin/bash
 
-# Directory containing the scripts (change this to your directory)
-scripts_dir="path/to/your/scripts"
+# This line specifies the interpreter to be used for this script (bash)
 
-# Get all .sh files in the directory
-shopt -s nullglob  # Allow for no matches in the glob
-scripts=("$scripts_dir"/*.sh)
-shopt -u nullglob  # Disable for other uses
+# Function to check if a file is executable
+function is_executable() {
+  local file="$1"  # Store the function argument (file path) in a local variable
+  [[ -x "$file" ]]  # Check if the file has execute permissions using the test operator '[[ ]]'
+}
 
-# Check if any scripts were found
-if [[ ${#scripts[@]} -eq 0 ]]; then
-  echo "No .sh files found in '$scripts_dir'"
-  exit 1
+# Function to run a script with optional verbose flag
+function run_script() {
+  local script_file="$1"  # Store the function argument (script path) in a local variable
+  local verbose="$2"     # Store the function argument (verbose flag) in a local variable
+
+  if [[ $verbose == "true" ]]; then
+    bash -x "$script_file"  # Run the script with verbose output if the verbose flag is true
+  else
+    bash "$script_file"     # Run the script normally
+  fi
+}
+
+# Main script logic
+
+# 1. Parse arguments
+script_dir="$1"  # Store the first argument (script directory) in a variable
+verbose="false"  # Set the verbose flag to false by default
+
+# 2. Check for verbose flag
+if [[ "$2" == "--verbose" ]]; then
+  verbose="true"   # Set the verbose flag to true if the second argument is "--verbose"
+  shift 2          # Remove the first two arguments (script directory and verbose flag) from processing
 fi
 
-# Loop through each script
-for script in "${scripts[@]}"; do
-  # Extract filename from path
-  filename=$(basename "$script")
+# 3. Check if directory is provided
+if [[ -z "$script_dir" ]]; then
+  echo "Error: Please specify a directory containing scripts."
+  exit 1  # Exit the script with an error code (1)
+fi
 
-  # Ask user for confirmation
-  read -r -p "Run script: $filename (y/n)? " response
-
-  if [[ $response =~ ^([Yy]|[yY]es)$ ]]; then
-    echo "Running: $filename"
-    # Run the script with source to avoid subshell issues
-    source "$script"
-  else
-    echo "Skipping: $filename"
+# 4. Find all executable bash files with numeric prefix
+executable_scripts=()
+for file in "$script_dir/"* ; do  # Loop through all files in the script directory
+  if [[ -f "$file" && is_executable "$file" && [[ $file =~ ^[0-9]+_.*\.sh$ ]] ]]; then
+    executable_scripts+=("$file")  # Add the file path to the executable_scripts array if it's a regular file, executable, and starts with a numeric prefix followed by ".sh" extension
   fi
-  echo ""  # Add a newline for better formatting
 done
 
-echo "All scripts processed!"
+# 5. Sort scripts numerically based on prefix (leading zeros preserved)
+sorted_scripts=($(echo "${executable_scripts[@]}" | tr ' ' '\n' | sort -V | tr '\n' ' '))
+#   - Convert the executable_scripts array to individual lines using 'tr ' ' '\n'
+#   - Sort the lines numerically with leading zeros preserved using 'sort -V'
+#   - Convert the sorted lines back to an array using 'tr '\n' ' '
+
+# 6. Check if any scripts were found
+if [[ ${#sorted_scripts[@]} -eq 0 ]]; then
+  echo "No executable scripts found in directory '$script_dir'."
+  exit 0  # Exit the script with a success code (0)
+fi
+
+# 7. Execute scripts in order
+for script in "${sorted_scripts[@]}"; do
+  run_script "$script" "$verbose"  # Call the run_script function for each script in the sorted order, passing the script path and verbose flag
+  echo ""                          # Print a newline after each script execution
+done
+
+echo "All scripts have been executed in order."
 
 
-# Explanation:
+# Example usage
+# ./install_mgr.sh /path/to/scripts --verbose
+#   - Run the install_mgr.sh script with the specified script directory and verbose flag
 
-# Shebang: Specifies the interpreter (/bin/bash) for this script.
-# Script Directory: Update scripts_dir with the actual path containing your development setup scripts.
-# Finding Scripts:
-# shopt -s nullglob: Allows handling cases where no files match the glob pattern.
-# scripts array: Stores all filenames ending with .sh in the scripts_dir.
-# shopt -u nullglob: Disables nullglob to avoid affecting other parts of the script.
-# Check for Scripts: Exits if no .sh files are found in the directory.
-# Looping: Iterates through each script in the scripts array.
-# Extracting Filename: Uses basename to get the filename without the path.
-# User Confirmation: Prompts the user with the filename and asks for confirmation (y/n) to run it.
-# The read command reads the user input and stores it in the response variable.
-# The regular expression ^([Yy]|[yY]es)$ checks if the response starts with y, Y, yes, or YES (case-insensitive).
-# Running Script:
-# If the user confirms, the script is sourced using source "$script". This avoids potential issues with subshells.
-# Otherwise, the script is skipped with a message.
-# Newline: Adds a newline for better readability in the output.
-# Completion Message: Prints a message after processing all scripts.
-# How to Use:
-
-# Save the script as run_setup_scripts.sh (or any preferred name) in a suitable location.
-# Make the script executable: chmod +x run_setup_scripts.sh
-# Run the script from your terminal: ./run_setup_scripts.sh
-# It will list each script and ask for confirmation before running it.
-# Additional Notes:
-
-# You can modify the user prompt message to provide more information about each script.
-# Consider adding error handling for cases where scripts fail to run.
+# each script in the directory will be executed in order, with verbose output if the --verbose flag is provided.
+# the order of execution is determined by the numeric prefix of the script files, with leading zeros preserved.
+# ex: 01_script1.sh, 02_script2.sh, 03_script3.sh, etc.
