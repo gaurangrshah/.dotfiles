@@ -1,13 +1,100 @@
 {
   "telemetry.telemetryLevel": "off",
-  "vscode_custom_css.imports": [
-    "file:///Users/knowhow/dev/._config/vscode-fonts.css"
-  ],
   "editor.renderControlCharacters": true,
   "editor.fontSize": 13,
   "editor.renderWhitespace": "all",
-  "editor.fontFamily": "Operator Mono Italic, Fira Code",
+  "editor.fontFamily": "'Operator Mono Medium', 'Fira Code'",
   "editor.fontLigatures": true,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "name": "comment",
+        "scope": ["comment"],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "name": "Variable",
+        "scope": ["variable.language", "string.other.link.title.markdown"],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "name": "Keyword, Storage",
+        "scope": [
+          "keyword",
+          "storage.modifier",
+          "storage.type.class",
+          "storage.type.function"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "name": "Keyword Control",
+        "scope": ["keyword.control"],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "name": "Storage Type",
+        "scope": ["storage.type"],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "name": "Storage Type Function",
+        "scope": ["storage.type.function"],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "name": "Storage Type Class",
+        "scope": ["storage.type.class"],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      //
+      {
+        "scope": [
+          "keyword",
+          "storage.modifier",
+          "storage.type.class.js",
+          "storage.type.js"
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "name": "Keyword Storage",
+        "scope": ["storage"], // variables let, const
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "name": "Entity",
+        "scope": ["entity.other.attribute-name", "entity.name.method"],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": ["keyword.control.conditional", "keyword.operator"],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
   "editor.lineHeight": 20.3,
   "editor.letterSpacing": 0.5,
   "editor.accessibilitySupport": "off",
@@ -22,7 +109,7 @@
   "workbench.colorTheme": "Tokyo Night",
   "zenMode.fullScreen": false,
   "terminal.integrated.env.osx": {},
-  "editor.matchBrackets": "always",
+  "editor.matchBrackets": "never",
   "files.exclude": {
     "**/.next/": true,
     "**/node_modules": true,
@@ -102,6 +189,7 @@
     "cmyk",
     "didn",
     "favorited",
+    "Fira",
     "fontsource",
     "Gaurang",
     "gaurangrshah",
@@ -144,7 +232,6 @@
   "git.autofetch": true,
   "workbench.sideBar.location": "right",
   "editor.minimap.enabled": false,
-  "workbench.activityBar.location": "hidden",
   "hediet.vscode-drawio.resizeImages": null,
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -159,5 +246,8 @@
     "stashes",
     "remoteBranches",
     "tags"
-  ]
+  ],
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingComments": "always",
+  "editor.linkedEditing": true
 }
