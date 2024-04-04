@@ -1,7 +1,7 @@
 {
   "telemetry.telemetryLevel": "off",
   "vscode_custom_css.imports": [
-    "file:///Users/knowhow/dev/._config/vscode-font.css"
+    "file:///Users/knowhow/dev/._config/vscode-fonts.css"
   ],
   "editor.renderControlCharacters": true,
   "editor.fontSize": 13,
@@ -22,7 +22,7 @@
   "workbench.colorTheme": "Tokyo Night",
   "zenMode.fullScreen": false,
   "terminal.integrated.env.osx": {},
-  "editor.matchBrackets": "never",
+  "editor.matchBrackets": "always",
   "files.exclude": {
     "**/.next/": true,
     "**/node_modules": true,
