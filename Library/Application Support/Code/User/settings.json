@@ -66,7 +66,6 @@
           "fontStyle": "italic"
         }
       },
-      //
       {
         "scope": [
           "keyword",
@@ -107,8 +106,25 @@
   "editor.cursorStyle": "block",
   "editor.rulers": [80],
   "editor.tabSize": 2,
-  "editor.matchBrackets": true,
   "editor.tabCompletion": "on",
+  "editor.matchBrackets": "always",
+  "editor.guides.bracketPairs": "active",
+  "editor.guides.bracketPairsHorizontal": false,
+  "workbench.colorCustomizations": {
+    "editorBracketPairGuide.background1": "#F8B46C60",
+    "editorBracketPairGuide.background2": "#FB78B560",
+    "editorBracketPairGuide.background3": "#4AACFB60",
+    "editorBracketPairGuide.background4": "#B98BF560",
+    "editorBracketPairGuide.background5": "#DAD8D860",
+    "editorBracketPairGuide.background6": "#18EECE60",
+
+    "editorBracketPairGuide.activeBackground1": "#F367C960",
+    "editorBracketPairGuide.activeBackground2": "#FD70B260",
+    "editorBracketPairGuide.activeBackground3": "#4AACFB60",
+    "editorBracketPairGuide.activeBackground4": "#B98BF560",
+    "editorBracketPairGuide.activeBackground5": "#DAD8D860",
+    "editorBracketPairGuide.activeBackground6": "#18EECE60"
+  },
   "workbench.fontAliasing": "auto",
   "workbench.iconTheme": "file-icons-colourless",
   "workbench.editor.labelFormat": "short",
