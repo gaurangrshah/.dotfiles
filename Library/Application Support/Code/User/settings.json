@@ -107,7 +107,7 @@
   "editor.rulers": [80],
   "editor.tabSize": 2,
   "editor.tabCompletion": "on",
-  "editor.matchBrackets": "never",
+  "editor.matchBrackets": false,
   "editor.guides.bracketPairs": "active",
   "editor.guides.bracketPairsHorizontal": false,
   "workbench.colorCustomizations": {
