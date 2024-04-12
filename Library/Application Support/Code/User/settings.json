@@ -107,7 +107,7 @@
   "editor.rulers": [80],
   "editor.tabSize": 2,
   "editor.tabCompletion": "on",
-  "editor.matchBrackets": "always",
+  "editor.matchBrackets": "never",
   "editor.guides.bracketPairs": "active",
   "editor.guides.bracketPairsHorizontal": false,
   "workbench.colorCustomizations": {
@@ -139,18 +139,17 @@
   },
   "search.mode": "newEditor",
   "search.exclude": {
-    "**/.next": true,
-    "**/node_modules": true,
-    "**/.history": true,
-    "**/coverage": true,
-    "**/dist": true,
-    "**/build": true,
     "**/.build": true,
-    "**/.gh-pages": true,
     "**/.cache": true,
+    "**/.gh-pages": true,
     "**/.git": true,
+    "**/.history": true,
     "**/.migrations": true,
-    "**/.vscode**": true
+    "**/.next": true,
+    "**/.vscode**": true,
+    "**/build": true,
+    "**/coverage": true,
+    "**/dist": true
   },
   "search.searchEditor.doubleClickBehaviour": "openLocationToSide",
   "[json]": {
@@ -223,6 +222,7 @@
     "ianvs",
     "lucide",
     "nextjs",
+    "nums",
     "postbuild",
     "roadmap",
     "Supa",

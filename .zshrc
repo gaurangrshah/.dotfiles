@@ -125,3 +125,11 @@ export NVM_DIR="$HOME/.nvm"
 PATH=~/.console-ninja/.bin:$PATH
 
 SPACESHIP_PROMPT_ASYNC=FALSE
+
+# pnpm
+export PNPM_HOME="/Users/knowhow/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
