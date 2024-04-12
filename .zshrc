@@ -126,6 +126,10 @@ PATH=~/.console-ninja/.bin:$PATH
 
 SPACESHIP_PROMPT_ASYNC=FALSE
 
+export VISUAL=micro
+export EDITOR=micro
+export TERMCMD=warp
+
 # pnpm
 export PNPM_HOME="/Users/knowhow/Library/pnpm"
 case ":$PATH:" in
