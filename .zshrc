@@ -127,7 +127,7 @@ PATH=~/.console-ninja/.bin:$PATH
 SPACESHIP_PROMPT_ASYNC=FALSE
 
 export VISUAL=micro
-export EDITOR=micro
+export EDITOR=code
 export TERMCMD=warp
 
 # pnpm

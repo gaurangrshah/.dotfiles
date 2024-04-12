@@ -265,5 +265,6 @@
   "cody.commandHints.enabled": true,
   "security.promptForLocalFileProtocolHandling": false,
   "cody.autocomplete.enabled": false,
-  "hediet.vscode-drawio.resizeImages": null
+  "hediet.vscode-drawio.resizeImages": null,
+  "workbench.activityBar.location": "hidden"
 }
