@@ -126,7 +126,7 @@ PATH=~/.console-ninja/.bin:$PATH
 
 SPACESHIP_PROMPT_ASYNC=FALSE
 
-export VISUAL=micro
+# export VISUAL=micro
 export EDITOR=code
 export TERMCMD=warp
 
@@ -141,10 +141,10 @@ esac
 
 # yazi
 function yy() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
 }
