@@ -148,3 +148,6 @@ function yy() {
   fi
   rm -f -- "$tmp"
 }
+
+# python
+export PATH="/usr/local/opt/python@3.12/bin:$PATH"

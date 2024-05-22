@@ -189,12 +189,10 @@
     "**/node_modules/**",
     "**/.next**",
     "**/.build**",
-    "**/.build**",
     "**/typings/**",
     "**/out/**",
     "**/coverage",
     "**/dist/**",
-    "**/build/**",
     "**/.gh-pages/**",
     "**/.cache/**",
     "**/.git/**",
@@ -211,6 +209,7 @@
     "ciel",
     "clsx",
     "cmyk",
+    "contentlayer",
     "didn",
     "favorited",
     "Fira",
@@ -263,8 +262,6 @@
   "console-ninja.featureSet": "Community",
   "cody.commandCodeLenses": true,
   "cody.commandHints.enabled": true,
-  "security.promptForLocalFileProtocolHandling": false,
   "cody.autocomplete.enabled": false,
-  "hediet.vscode-drawio.resizeImages": null,
-  "workbench.activityBar.location": "hidden"
+  "hediet.vscode-drawio.resizeImages": null
 }
